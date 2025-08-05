@@ -1,0 +1,23 @@
+[tools]
+gradle = "9.0.0"
+java = "21"
+
+[env]
+android_app_version_code = "1"
+android_app_version_name = "1.0"
+desktop_app_version = "1.0.0"
+ios_app_version = "1.0"
+
+[tasks.updateVersions]
+run = "gradle versionCatalogUpdate"
+
+[tasks.clean-cache]
+run = "gradle clean --refresh-dependencies"
+
+[tasks.publish]
+dir = "super-rounded-corner-shape"
+run = "gradle publishAndReleaseToMavenCentral --no-configuration-cache"
+
+[tasks.publish_to_local]
+dir = "super-rounded-corner-shape"
+run = "gradle publishToMavenLocal --no-configuration-cache"

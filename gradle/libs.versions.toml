@@ -1,0 +1,33 @@
+[versions]
+#android
+androidCompileSdk = "35"
+androidMinSdk = "28"
+androidTargetSdk = "35"
+androidGradlePlugin = "8.11.1"
+#androidx
+androidxAnnotation = "1.9.1"
+#kotlin
+kotlin = "2.2.0"
+binaryCompatibilityValidator = "0.18.1"
+#other
+dokka = "2.0.0"
+mavenPublish = "0.34.0"
+kotlinxCoroutines = "1.10.2"
+ktor = "3.2.3"
+[libraries]
+#androidx
+androidx-annotation = { module = "androidx.annotation:annotation", version.ref = "androidxAnnotation" }
+#ktor
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
+[plugins]
+#android
+android-applcation = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+android-library = { id = "com.android.kotlin.multiplatform.library", version.ref = "androidGradlePlugin" }
+android-test = { id = "com.android.test", version.ref = "androidGradlePlugin" }
+#kotlin
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+binaryCompatibilityValidator = { id = "org.jetbrains.kotlinx.binary-compatibility-validator", version.ref = "binaryCompatibilityValidator" }
+#dokka
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
+mavenPublish = { id = "com.vanniktech.maven.publish", version.ref = "mavenPublish" }
