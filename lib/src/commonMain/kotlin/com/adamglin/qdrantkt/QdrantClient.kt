@@ -1,13 +1,19 @@
 package com.adamglin.qdrantkt
 
 import io.ktor.client.*
+import io.ktor.client.engine.*
 import io.ktor.client.plugins.*
+import io.ktor.client.plugins.contentnegotiation.*
+import io.ktor.serialization.kotlinx.json.*
 
 class QdrantClient(
-    httpClient: HttpClient,
+    httpClientEngine: HttpClientEngine,
     private val url: String
 ) {
-    internal val httpClient = httpClient.config {
+    internal val httpClient = HttpClient(httpClientEngine) {
+        install(ContentNegotiation) {
+            json()
+        }
         defaultRequest {
             host = this@QdrantClient.url
         }
