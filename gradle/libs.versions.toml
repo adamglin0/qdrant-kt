@@ -14,12 +14,15 @@ dokka = "2.0.0"
 mavenPublish = "0.34.0"
 kotlinxCoroutines = "1.10.2"
 ktor = "3.2.3"
+testBalloon = "0.4.0-K2.2.0"
 [libraries]
 #androidx
 androidx-annotation = { module = "androidx.annotation:annotation", version.ref = "androidxAnnotation" }
 #ktor
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
+#testBalloon
+testBalloon-framework-core = { module = "de.infix.testBalloon:testBalloon-framework-core", version.ref = "testBalloon" }
 [plugins]
 #android
 android-applcation = { id = "com.android.application", version.ref = "androidGradlePlugin" }
@@ -31,3 +34,4 @@ binaryCompatibilityValidator = { id = "org.jetbrains.kotlinx.binary-compatibilit
 #dokka
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
 mavenPublish = { id = "com.vanniktech.maven.publish", version.ref = "mavenPublish" }
+testBalloon = { id = "de.infix.testBalloon", version.ref = "testBalloon" }

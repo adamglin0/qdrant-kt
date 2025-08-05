@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.dokka)
     alias(libs.plugins.mavenPublish)
     alias(libs.plugins.binaryCompatibilityValidator)
+    alias(libs.plugins.testBalloon)
 }
 
 kotlin {
@@ -52,6 +53,10 @@ kotlin {
         commonMain.dependencies {
             implementation(libs.androidx.annotation)
             implementation(libs.ktor.client.core)
+        }
+        commonTest.dependencies {
+            implementation(libs.testBalloon.framework.core)
+                    implementation(kotlin("test"))
         }
     }
 }
