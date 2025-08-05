@@ -1,7 +1,9 @@
 package com.adamglin.qdrantkt.domain
 
 import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
 
+@Serializable
 data class HnswConfig(
     val m: Int? = null,
     @SerialName("ef_construct")

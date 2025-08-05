@@ -1,7 +1,9 @@
 package com.adamglin.qdrantkt.domain
 
 import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
 
+@Serializable
 enum class DataType {
     /**
      * Vectors are stored as single-precision floating point numbers, 4 bytes.

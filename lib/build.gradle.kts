@@ -8,6 +8,7 @@ plugins {
     alias(libs.plugins.mavenPublish)
     alias(libs.plugins.binaryCompatibilityValidator)
     alias(libs.plugins.testBalloon)
+   alias(libs.plugins.kotlin.serialization)
 }
 
 kotlin {
@@ -53,10 +54,14 @@ kotlin {
         commonMain.dependencies {
             implementation(libs.androidx.annotation)
             implementation(libs.ktor.client.core)
+            implementation(libs.ktor.client.cio)
+            implementation(libs.ktor.client.contentnegotiation)
+            implementation(libs.ktor.serialization.kotlinx.json)
         }
         commonTest.dependencies {
             implementation(libs.testBalloon.framework.core)
-                    implementation(kotlin("test"))
+            implementation(kotlin("test"))
+            implementation(libs.ktor.client.mock)
         }
     }
 }
