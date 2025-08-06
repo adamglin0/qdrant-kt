@@ -8,14 +8,14 @@ import io.ktor.serialization.kotlinx.json.*
 
 class QdrantClient(
     httpClientEngine: HttpClientEngine,
-    private val url: String
+    url: String,
 ) {
     internal val httpClient = HttpClient(httpClientEngine) {
         install(ContentNegotiation) {
             json()
         }
         defaultRequest {
-            host = this@QdrantClient.url
+            host = url
         }
     }
 }
