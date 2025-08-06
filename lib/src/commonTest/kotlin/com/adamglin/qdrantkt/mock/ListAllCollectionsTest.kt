@@ -1,5 +1,6 @@
-package com.adamglin.qdrantkt
+package com.adamglin.qdrantkt.mock
 
+import com.adamglin.qdrantkt.QdrantClient
 import com.adamglin.qdrantkt.collections.Collections
 import com.adamglin.qdrantkt.collections.listAllCollections
 import com.adamglin.qdrantkt.domain.QdrantResponse
@@ -115,8 +116,4 @@ val listAllCollectionsByMockTestSuite by testSuite {
         val errorResponse = response as QdrantResponse.Error
         assertEquals("Not found", errorResponse.status.error)
     }
-}
-
-val listAllCollectionsByRealTestSuite by testSuite {
-    test("listAllCollections should return a list of collections") {}
 }
