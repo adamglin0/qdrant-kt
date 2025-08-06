@@ -16,20 +16,11 @@ import kotlinx.serialization.json.jsonPrimitive
 @Serializable(with = QdrantResponseSerializer::class)
 sealed class QdrantResponse<out T> {
     abstract val time: Double
-    abstract val status: String
-
-    // Returns true if this response represents a successful operation
-    val isSuccess: Boolean
-        get() = status == "ok"
-
-    // Returns true if this response represents an error
-    val isError: Boolean
-        get() = !isSuccess
 
     @Serializable
     data class Success<T>(
         override val time: Double,
-        override val status: String,
+        val status: String,
         val usage: HardwareUsage,
         val result: T
     ) : QdrantResponse<T>()
@@ -37,8 +28,11 @@ sealed class QdrantResponse<out T> {
     @Serializable
     data class Error(
         override val time: Double,
-        override val status: String
-    ) : QdrantResponse<Nothing>()
+        val status: ErrorStatus
+    ) : QdrantResponse<Nothing>() {
+        @Serializable
+        data class ErrorStatus(val error: String)
+    }
 }
 
 internal class QdrantResponseSerializer<T>(
@@ -67,7 +61,11 @@ internal class QdrantResponseSerializer<T>(
         val jsonInput = decoder as? JsonDecoder ?: error("Can be used only with JSON")
         val jsonObject = jsonInput.decodeJsonElement().jsonObject
 
-        return if (jsonObject["status"]?.jsonPrimitive?.content == "ok") {
+        val statusValue = runCatching {
+            jsonObject["status"]?.jsonPrimitive?.content
+        }.getOrNull()
+
+        return if (statusValue == "ok") {
             jsonInput.json.decodeFromJsonElement(
                 QdrantResponse.Success.serializer(resultSerializer),
                 jsonObject
