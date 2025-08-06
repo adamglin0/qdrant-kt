@@ -63,6 +63,21 @@ kotlin {
             implementation(kotlin("test"))
             implementation(libs.ktor.client.mock)
         }
+        nativeTest.dependencies {
+            implementation(libs.ktor.client.cio)
+        }
+        jvmTest.dependencies {
+            implementation(libs.ktor.client.cio)
+        }
+        androidUnitTest.dependencies {
+            implementation(libs.ktor.client.cio)
+        }
+        jsTest.dependencies {
+            implementation(libs.ktor.client.js)
+        }
+        wasmJsTest.dependencies {
+            implementation(libs.ktor.client.js)
+        }
     }
 }
 

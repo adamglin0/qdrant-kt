@@ -1,5 +1,6 @@
 public final class com/adamglin/qdrantkt/QdrantClient {
-	public fun <init> (Lio/ktor/client/engine/HttpClientEngine;Ljava/lang/String;)V
+	public fun <init> (Lio/ktor/client/engine/HttpClientEngine;Ljava/lang/String;Ljava/lang/Integer;)V
+	public synthetic fun <init> (Lio/ktor/client/engine/HttpClientEngine;Ljava/lang/String;Ljava/lang/Integer;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 }
 
 public final class com/adamglin/qdrantkt/collections/Collections {
@@ -201,36 +202,101 @@ public final class com/adamglin/qdrantkt/domain/MultiVectorConfig$Companion {
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
 }
 
-public final class com/adamglin/qdrantkt/domain/QdrantResponse {
+public abstract class com/adamglin/qdrantkt/domain/QdrantResponse {
 	public static final field Companion Lcom/adamglin/qdrantkt/domain/QdrantResponse$Companion;
-	public fun <init> (Lcom/adamglin/qdrantkt/domain/HardwareUsage;DLjava/lang/String;Ljava/lang/Object;)V
-	public final fun component1 ()Lcom/adamglin/qdrantkt/domain/HardwareUsage;
-	public final fun component2 ()D
-	public final fun component3 ()Ljava/lang/String;
+	public abstract fun getTime ()D
+}
+
+public final class com/adamglin/qdrantkt/domain/QdrantResponse$Companion {
+	public final fun serializer (Lkotlinx/serialization/KSerializer;)Lkotlinx/serialization/KSerializer;
+}
+
+public final class com/adamglin/qdrantkt/domain/QdrantResponse$Error : com/adamglin/qdrantkt/domain/QdrantResponse {
+	public static final field Companion Lcom/adamglin/qdrantkt/domain/QdrantResponse$Error$Companion;
+	public fun <init> (DLcom/adamglin/qdrantkt/domain/QdrantResponse$Error$ErrorStatus;)V
+	public final fun component1 ()D
+	public final fun component2 ()Lcom/adamglin/qdrantkt/domain/QdrantResponse$Error$ErrorStatus;
+	public final fun copy (DLcom/adamglin/qdrantkt/domain/QdrantResponse$Error$ErrorStatus;)Lcom/adamglin/qdrantkt/domain/QdrantResponse$Error;
+	public static synthetic fun copy$default (Lcom/adamglin/qdrantkt/domain/QdrantResponse$Error;DLcom/adamglin/qdrantkt/domain/QdrantResponse$Error$ErrorStatus;ILjava/lang/Object;)Lcom/adamglin/qdrantkt/domain/QdrantResponse$Error;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getStatus ()Lcom/adamglin/qdrantkt/domain/QdrantResponse$Error$ErrorStatus;
+	public fun getTime ()D
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final synthetic class com/adamglin/qdrantkt/domain/QdrantResponse$Error$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Lcom/adamglin/qdrantkt/domain/QdrantResponse$Error$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcom/adamglin/qdrantkt/domain/QdrantResponse$Error;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Lcom/adamglin/qdrantkt/domain/QdrantResponse$Error;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class com/adamglin/qdrantkt/domain/QdrantResponse$Error$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class com/adamglin/qdrantkt/domain/QdrantResponse$Error$ErrorStatus {
+	public static final field Companion Lcom/adamglin/qdrantkt/domain/QdrantResponse$Error$ErrorStatus$Companion;
+	public fun <init> (Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;)Lcom/adamglin/qdrantkt/domain/QdrantResponse$Error$ErrorStatus;
+	public static synthetic fun copy$default (Lcom/adamglin/qdrantkt/domain/QdrantResponse$Error$ErrorStatus;Ljava/lang/String;ILjava/lang/Object;)Lcom/adamglin/qdrantkt/domain/QdrantResponse$Error$ErrorStatus;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getError ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final synthetic class com/adamglin/qdrantkt/domain/QdrantResponse$Error$ErrorStatus$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Lcom/adamglin/qdrantkt/domain/QdrantResponse$Error$ErrorStatus$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcom/adamglin/qdrantkt/domain/QdrantResponse$Error$ErrorStatus;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Lcom/adamglin/qdrantkt/domain/QdrantResponse$Error$ErrorStatus;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class com/adamglin/qdrantkt/domain/QdrantResponse$Error$ErrorStatus$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class com/adamglin/qdrantkt/domain/QdrantResponse$Success : com/adamglin/qdrantkt/domain/QdrantResponse {
+	public static final field Companion Lcom/adamglin/qdrantkt/domain/QdrantResponse$Success$Companion;
+	public fun <init> (DLjava/lang/String;Lcom/adamglin/qdrantkt/domain/HardwareUsage;Ljava/lang/Object;)V
+	public final fun component1 ()D
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Lcom/adamglin/qdrantkt/domain/HardwareUsage;
 	public final fun component4 ()Ljava/lang/Object;
-	public final fun copy (Lcom/adamglin/qdrantkt/domain/HardwareUsage;DLjava/lang/String;Ljava/lang/Object;)Lcom/adamglin/qdrantkt/domain/QdrantResponse;
-	public static synthetic fun copy$default (Lcom/adamglin/qdrantkt/domain/QdrantResponse;Lcom/adamglin/qdrantkt/domain/HardwareUsage;DLjava/lang/String;Ljava/lang/Object;ILjava/lang/Object;)Lcom/adamglin/qdrantkt/domain/QdrantResponse;
+	public final fun copy (DLjava/lang/String;Lcom/adamglin/qdrantkt/domain/HardwareUsage;Ljava/lang/Object;)Lcom/adamglin/qdrantkt/domain/QdrantResponse$Success;
+	public static synthetic fun copy$default (Lcom/adamglin/qdrantkt/domain/QdrantResponse$Success;DLjava/lang/String;Lcom/adamglin/qdrantkt/domain/HardwareUsage;Ljava/lang/Object;ILjava/lang/Object;)Lcom/adamglin/qdrantkt/domain/QdrantResponse$Success;
 	public fun equals (Ljava/lang/Object;)Z
 	public final fun getResult ()Ljava/lang/Object;
 	public final fun getStatus ()Ljava/lang/String;
-	public final fun getTime ()D
+	public fun getTime ()D
 	public final fun getUsage ()Lcom/adamglin/qdrantkt/domain/HardwareUsage;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
 }
 
-public final synthetic class com/adamglin/qdrantkt/domain/QdrantResponse$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+public final synthetic class com/adamglin/qdrantkt/domain/QdrantResponse$Success$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public fun <init> (Lkotlinx/serialization/KSerializer;)V
 	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
-	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcom/adamglin/qdrantkt/domain/QdrantResponse;
+	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcom/adamglin/qdrantkt/domain/QdrantResponse$Success;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
 	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
-	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Lcom/adamglin/qdrantkt/domain/QdrantResponse;)V
+	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Lcom/adamglin/qdrantkt/domain/QdrantResponse$Success;)V
 	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
 	public final fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
 }
 
-public final class com/adamglin/qdrantkt/domain/QdrantResponse$Companion {
+public final class com/adamglin/qdrantkt/domain/QdrantResponse$Success$Companion {
 	public final fun serializer (Lkotlinx/serialization/KSerializer;)Lkotlinx/serialization/KSerializer;
 }
 

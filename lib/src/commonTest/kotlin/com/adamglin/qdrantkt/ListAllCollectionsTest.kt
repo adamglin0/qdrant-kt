@@ -116,3 +116,7 @@ val listAllCollectionsByMockTestSuite by testSuite {
         assertEquals("Not found", errorResponse.status.error)
     }
 }
+
+val listAllCollectionsByRealTestSuite by testSuite {
+    test("listAllCollections should return a list of collections") {}
+}
