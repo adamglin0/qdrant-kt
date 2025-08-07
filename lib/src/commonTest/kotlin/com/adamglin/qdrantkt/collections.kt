@@ -4,10 +4,8 @@ import com.adamglin.qdrantkt.collections.createCollection
 import com.adamglin.qdrantkt.collections.deleteCollection
 import com.adamglin.qdrantkt.collections.getCollectionInfo
 import com.adamglin.qdrantkt.collections.listAllCollections
-import com.adamglin.qdrantkt.collections.updateCollection
 import com.adamglin.qdrantkt.domain.CollectionStatus
 import com.adamglin.qdrantkt.domain.Distance
-import com.adamglin.qdrantkt.domain.StrictModeConfig
 import com.adamglin.qdrantkt.domain.VectorParams
 import de.infix.testBalloon.framework.testSuite
 import kotlin.test.assertEquals
@@ -27,7 +25,7 @@ val collectionTest by testSuite {
         assertEquals(list.size, 1)
     }
 
-    test("get collection detail"){
+    test("get collection detail") {
         val first = client.listAllCollections().first()
         val detail = client.getCollectionInfo(first)
         assertTrue { detail.status == CollectionStatus.Green }
