@@ -62,6 +62,7 @@ kotlin {
             implementation(libs.testBalloon.framework.core)
             implementation(kotlin("test"))
             implementation(libs.ktor.client.mock)
+            implementation(libs.kotlinx.coroutines.test)
         }
         nativeTest.dependencies {
             implementation(libs.ktor.client.cio)

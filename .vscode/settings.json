@@ -1,0 +1,7 @@
+{
+    "dart.flutterSdkPath": "/Users/adamglin/.local/share/mise/installs/flutter/3.32.5-stable",
+    "debug.javascript.defaultRuntimeExecutable": {
+        "pwa-node": "/Users/adamglin/.local/share/mise/shims/node"
+    },
+    "python.defaultInterpreterPath": "/Users/adamglin/.local/share/mise/installs/python/3.12.11/bin/python"
+}

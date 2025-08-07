@@ -21,7 +21,7 @@ sealed class QdrantResponse<out T> {
     data class Success<T>(
         override val time: Double,
         val status: String,
-        val usage: HardwareUsage,
+        val usage: HardwareUsage? = null,
         val result: T
     ) : QdrantResponse<T>()
 

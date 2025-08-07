@@ -1,6 +1,5 @@
 public final class com/adamglin/qdrantkt/QdrantClient {
-	public fun <init> (Lio/ktor/client/engine/HttpClientEngine;Ljava/lang/String;Ljava/lang/Integer;)V
-	public synthetic fun <init> (Lio/ktor/client/engine/HttpClientEngine;Ljava/lang/String;Ljava/lang/Integer;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun <init> (Lio/ktor/client/engine/HttpClientEngine;Ljava/lang/String;)V
 }
 
 public final class com/adamglin/qdrantkt/collections/Collections {
@@ -58,8 +57,8 @@ public final class com/adamglin/qdrantkt/collections/Collections$Companion {
 }
 
 public final class com/adamglin/qdrantkt/collections/CreateCollectionKt {
-	public static final fun createCollection-3bFjkrY (Lcom/adamglin/qdrantkt/QdrantClient;Ljava/lang/String;Lkotlin/time/Duration;Ljava/util/Map;Ljava/lang/Integer;Lcom/adamglin/qdrantkt/domain/ShardingMethod;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public static synthetic fun createCollection-3bFjkrY$default (Lcom/adamglin/qdrantkt/QdrantClient;Ljava/lang/String;Lkotlin/time/Duration;Ljava/util/Map;Ljava/lang/Integer;Lcom/adamglin/qdrantkt/domain/ShardingMethod;ILkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public static final fun createCollection-kGKlTSQ (Lcom/adamglin/qdrantkt/QdrantClient;Ljava/lang/String;Ljava/util/Map;Lkotlin/time/Duration;Ljava/lang/Integer;Lcom/adamglin/qdrantkt/domain/ShardingMethod;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Boolean;Lcom/adamglin/qdrantkt/domain/HnswConfig;Lcom/adamglin/qdrantkt/domain/WalConfigDiff;Lcom/adamglin/qdrantkt/domain/OptimizersConfigDiff;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static synthetic fun createCollection-kGKlTSQ$default (Lcom/adamglin/qdrantkt/QdrantClient;Ljava/lang/String;Ljava/util/Map;Lkotlin/time/Duration;Ljava/lang/Integer;Lcom/adamglin/qdrantkt/domain/ShardingMethod;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Boolean;Lcom/adamglin/qdrantkt/domain/HnswConfig;Lcom/adamglin/qdrantkt/domain/WalConfigDiff;Lcom/adamglin/qdrantkt/domain/OptimizersConfigDiff;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
 }
 
 public final class com/adamglin/qdrantkt/collections/ListAllCollectionsKt {
@@ -202,6 +201,49 @@ public final class com/adamglin/qdrantkt/domain/MultiVectorConfig$Companion {
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
 }
 
+public final class com/adamglin/qdrantkt/domain/OptimizersConfigDiff {
+	public static final field Companion Lcom/adamglin/qdrantkt/domain/OptimizersConfigDiff$Companion;
+	public fun <init> ()V
+	public fun <init> (Ljava/lang/Double;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Long;Ljava/lang/Integer;)V
+	public synthetic fun <init> (Ljava/lang/Double;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Long;Ljava/lang/Integer;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/Double;
+	public final fun component2 ()Ljava/lang/Integer;
+	public final fun component3 ()Ljava/lang/Integer;
+	public final fun component4 ()Ljava/lang/Integer;
+	public final fun component5 ()Ljava/lang/Integer;
+	public final fun component6 ()Ljava/lang/Integer;
+	public final fun component7 ()Ljava/lang/Long;
+	public final fun component8 ()Ljava/lang/Integer;
+	public final fun copy (Ljava/lang/Double;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Long;Ljava/lang/Integer;)Lcom/adamglin/qdrantkt/domain/OptimizersConfigDiff;
+	public static synthetic fun copy$default (Lcom/adamglin/qdrantkt/domain/OptimizersConfigDiff;Ljava/lang/Double;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Long;Ljava/lang/Integer;ILjava/lang/Object;)Lcom/adamglin/qdrantkt/domain/OptimizersConfigDiff;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getDefaultSegmentNumber ()Ljava/lang/Integer;
+	public final fun getDeletedThreshold ()Ljava/lang/Double;
+	public final fun getFlushIntervalSec ()Ljava/lang/Long;
+	public final fun getIndexingThreshold ()Ljava/lang/Integer;
+	public final fun getMaxOptimizationThreads ()Ljava/lang/Integer;
+	public final fun getMaxSegmentSize ()Ljava/lang/Integer;
+	public final fun getMemmapThreshold ()Ljava/lang/Integer;
+	public final fun getVacuumMinVectorNumber ()Ljava/lang/Integer;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final synthetic class com/adamglin/qdrantkt/domain/OptimizersConfigDiff$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Lcom/adamglin/qdrantkt/domain/OptimizersConfigDiff$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcom/adamglin/qdrantkt/domain/OptimizersConfigDiff;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Lcom/adamglin/qdrantkt/domain/OptimizersConfigDiff;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class com/adamglin/qdrantkt/domain/OptimizersConfigDiff$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
 public abstract class com/adamglin/qdrantkt/domain/QdrantResponse {
 	public static final field Companion Lcom/adamglin/qdrantkt/domain/QdrantResponse$Companion;
 	public abstract fun getTime ()D
@@ -270,6 +312,7 @@ public final class com/adamglin/qdrantkt/domain/QdrantResponse$Error$ErrorStatus
 public final class com/adamglin/qdrantkt/domain/QdrantResponse$Success : com/adamglin/qdrantkt/domain/QdrantResponse {
 	public static final field Companion Lcom/adamglin/qdrantkt/domain/QdrantResponse$Success$Companion;
 	public fun <init> (DLjava/lang/String;Lcom/adamglin/qdrantkt/domain/HardwareUsage;Ljava/lang/Object;)V
+	public synthetic fun <init> (DLjava/lang/String;Lcom/adamglin/qdrantkt/domain/HardwareUsage;Ljava/lang/Object;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()D
 	public final fun component2 ()Ljava/lang/String;
 	public final fun component3 ()Lcom/adamglin/qdrantkt/domain/HardwareUsage;
@@ -350,6 +393,37 @@ public final synthetic class com/adamglin/qdrantkt/domain/VectorParams$$serializ
 }
 
 public final class com/adamglin/qdrantkt/domain/VectorParams$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class com/adamglin/qdrantkt/domain/WalConfigDiff {
+	public static final field Companion Lcom/adamglin/qdrantkt/domain/WalConfigDiff$Companion;
+	public fun <init> ()V
+	public fun <init> (Ljava/lang/Integer;Ljava/lang/Integer;)V
+	public synthetic fun <init> (Ljava/lang/Integer;Ljava/lang/Integer;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/Integer;
+	public final fun component2 ()Ljava/lang/Integer;
+	public final fun copy (Ljava/lang/Integer;Ljava/lang/Integer;)Lcom/adamglin/qdrantkt/domain/WalConfigDiff;
+	public static synthetic fun copy$default (Lcom/adamglin/qdrantkt/domain/WalConfigDiff;Ljava/lang/Integer;Ljava/lang/Integer;ILjava/lang/Object;)Lcom/adamglin/qdrantkt/domain/WalConfigDiff;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getWalCapacityMb ()Ljava/lang/Integer;
+	public final fun getWalSegmentsAhead ()Ljava/lang/Integer;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final synthetic class com/adamglin/qdrantkt/domain/WalConfigDiff$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Lcom/adamglin/qdrantkt/domain/WalConfigDiff$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcom/adamglin/qdrantkt/domain/WalConfigDiff;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Lcom/adamglin/qdrantkt/domain/WalConfigDiff;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class com/adamglin/qdrantkt/domain/WalConfigDiff$Companion {
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
 }
 
