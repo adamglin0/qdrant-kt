@@ -12,11 +12,11 @@ data class OptimizersConfigDiff(
     @SerialName("default_segment_number")
     val defaultSegmentNumber: Int? = null,
     @SerialName("max_segment_size")
-    val maxSegmentSize: Int? = null,
+    val maxSegmentSize: Long? = null,
     @SerialName("memmap_threshold")
-    val memmapThreshold: Int? = null,
+    val memmapThreshold: Long? = null,
     @SerialName("indexing_threshold")
-    val indexingThreshold: Int? = null,
+    val indexingThreshold: Long? = null,
     @SerialName("flush_interval_sec")
     val flushIntervalSec: Long? = null,
     @SerialName("max_optimization_threads")

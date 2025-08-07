@@ -6,7 +6,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class WalConfigDiff(
     @SerialName("wal_capacity_mb")
-    val walCapacityMb: Int? = null,
+    val walCapacityMb: Long? = null,
     @SerialName("wal_segments_ahead")
-    val walSegmentsAhead: Int? = null
+    val walSegmentsAhead: Long? = null
 )
